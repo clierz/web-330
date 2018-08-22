@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 4.2</title>
+
+    <!-- jQuery reference -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <!-- Create a button that invokes a server side get request to return an animal breed -->
+    <h4>HTTP GET Request</h4>
+    <button id="get1">Get Random Breed</button>
+    
+    <!-- Below is the Jquery registration function, we're saying find the get 1 button and once you find it, 
+        register a click event and invoke a Get request to the URL that's designated.  Log the return data to the console.  -->
+<script>
+    
+    $(function() {
+        $("#get1").click(function() {
+           $.get('https://dog.ceo/api/breeds/image/random', function(data, status) {
+               console.log('Data: ' + JSON.stringify(data) + '\nStatus: ' + status);
+           
+        })
+    });
+});
+
+</script>
+
+</body>
+</html>

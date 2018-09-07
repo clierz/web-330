@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Exercise 6.2</title>
+    <title>Exercise 6.3</title>
 
     <!-- Stylesheet - Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
@@ -23,17 +23,17 @@
         <li class="nav-item active">
             <a class="nav-link" href="#">About</a>
         </li> 
-            <li class="nav-item active">
+        <li class="nav-item active">
             <a class="nav-link" href="#">Contact Us</a>
         </li>             
     </ul>
 </nav>
 
-<!-- Container Fields -->
+
 <div class = "container" role = "main">
     <br /><br />
 
-    <h2>Person View Model</h2>
+    <h2>Person Object Literal Example</h2>
 
     <div class="form-group">
         <label for="txtFirstName">First Name:</label>
@@ -49,19 +49,23 @@
     <div class="form-group">
     <label for="txtEmail">Email: </label>
     <input type="text" class="form-control alert-warning" data-bind="value: email" id="txtEmail">
+    </div>
+
 </div>
 
-
 <script>
-//Person object
-    function PersonViewModel(){
-        this.firstName = ko.observable("Abraham");
-        this.lastName = ko.observable("Lincoln");
-        this.email = ko.observable("alincoln@domain.com");
-    }
+// create object literal
 
-    ko.applyBindings(new PersonViewModel());
+var personViewModel = {
+    firstName: "Abraham",
+    lastName: "Lincoln",
+    email: "alincoln@domain.com",
+};
 
+// call the ko apply bindings function
+
+ko.applyBindings(personViewModel);
+    
 </script>
 
 </body>

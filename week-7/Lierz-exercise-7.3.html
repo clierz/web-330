@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Exercise 7.3</title>
+
+    <!-- Stylesheet - Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <!-- JavaScript Libraries -->
+    <script src="../knockout-3.4.2.js"></script>
+</head>
+<!-- Example of using 'foreach' binding in JavaScript -->
+<div role="main" class="container">
+    <br/><br/>
+    <h2>The 'foreach' Binding</h2>
+
+    <div role="main" class="container">
+        <br/><br/>
+        <h2>The "foreach" binding</h2>
+            <table class="table table-dark table-striped table-hover">
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Price</th>
+            </tr>
+            </thead>
+            <tbody data-bind="foreach: textBook">
+            <tr>
+                <td data-bind="text: title"></td>
+                <td data-bind="text: price"></td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+           </div>
+<script>
+    function BookViewModel() {
+        this.textBook = ko.observableArray([
+        {title: "JavaScript 101", price: 1.09},
+        {title: "Challenger Sale", price: 18.99},
+        {title: "Dictionary", price: 25.05},
+        {title: "HTML & CSS", price: 14.99}
+        ]);
+    }
+
+    ko.applyBindings(new BookViewModel());
+</script>
+</html>
